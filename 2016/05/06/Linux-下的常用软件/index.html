@@ -1,0 +1,706 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computers,Application Software," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言最近要对笔记本的硬件进行一些小改动，顺便也可能会重装一下系统。这里只介绍 Linux 下的软件，因为我的主要生产力工具还是 Linux。毕竟 Windows 给我的感觉就是太臃肿了，而且很多软件都充斥着恶意。我知道 Linux 的命令行很强大，但是我接下来介绍的大多都是图形界面的应用。毕竟图形界面更加直观。有些软件源里面没有，不过应该都能找到 PPA 的，自己手动装容易弄乱。
+Linux 发行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 下的常用软件">
+<meta property="og:url" content="http://mpaperboat.me/2016/05/06/Linux-下的常用软件/index.html">
+<meta property="og:site_name" content="Paperboat">
+<meta property="og:description" content="前言最近要对笔记本的硬件进行一些小改动，顺便也可能会重装一下系统。这里只介绍 Linux 下的软件，因为我的主要生产力工具还是 Linux。毕竟 Windows 给我的感觉就是太臃肿了，而且很多软件都充斥着恶意。我知道 Linux 的命令行很强大，但是我接下来介绍的大多都是图形界面的应用。毕竟图形界面更加直观。有些软件源里面没有，不过应该都能找到 PPA 的，自己手动装容易弄乱。
+Linux 发行">
+<meta property="og:updated_time" content="2016-09-29T10:58:57.343Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 下的常用软件">
+<meta name="twitter:description" content="前言最近要对笔记本的硬件进行一些小改动，顺便也可能会重装一下系统。这里只介绍 Linux 下的软件，因为我的主要生产力工具还是 Linux。毕竟 Windows 给我的感觉就是太臃肿了，而且很多软件都充斥着恶意。我知道 Linux 的命令行很强大，但是我接下来介绍的大多都是图形界面的应用。毕竟图形界面更加直观。有些软件源里面没有，不过应该都能找到 PPA 的，自己手动装容易弄乱。
+Linux 发行">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Linux 下的常用软件 | Paperboat </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Paperboat</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-websites">
+          <a href="/websites" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Websites
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'GhzLgxfy9dgx1J5usfEi','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Linux 下的常用软件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-06T13:58:27+08:00" content="2016-05-06">
+              2016-05-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Computers-ApplicationSoftware/" itemprop="url" rel="index">
+                    <span itemprop="name">Computers.ApplicationSoftware</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/06/Linux-下的常用软件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/06/Linux-下的常用软件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近要对笔记本的硬件进行一些小改动，顺便也可能会重装一下系统。这里只介绍 Linux 下的软件，因为我的主要生产力工具还是 Linux。毕竟 Windows 给我的感觉就是太臃肿了，而且很多软件都充斥着恶意。我知道 Linux 的命令行很强大，但是我接下来介绍的大多都是图形界面的应用。毕竟图形界面更加直观。有些软件源里面没有，不过应该都能找到 PPA 的，自己手动装容易弄乱。</p>
+<h1 id="Linux-发行版和桌面环境"><a href="#Linux-发行版和桌面环境" class="headerlink" title="Linux 发行版和桌面环境"></a>Linux 发行版和桌面环境</h1><p>还是用 Ubuntu 吧，软件资源多，遇到问题也比较容易处理。桌面环境的话，其实 Ubuntu 自带的 Unity 现在也挺好的，配上 Numix 的主题和图标，以及各种 wallpaper 包以后就特别漂亮了。哦，对了，还要装 Unity Tweak Tool。KDE 和 Gnome 也可以装一下，各有优势吧，Gnome 可以装好多插件。</p>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p>Eclipse 的功能很丰富，写各种东西都可以。QtCreator 写 C++ 挺舒服的，况且 Qt 库本来就是比较好的 C++ GUI 库。KDevelop 也是一个比较重量级的软件，和 Eclipse 差不多，挺好用的。然后最近需要写安卓 App，所以要装个 Android Studio。版本控制的话，用 SmartGit 不错。</p>
+<h1 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h1><p>hexo 是肯定要装的，然后 Markdown 编辑器就用 Haroopad 吧。</p>
+<h1 id="上网"><a href="#上网" class="headerlink" title="上网"></a>上网</h1><p>用 Firefox，登陆了以后所有资料都是同步的，方便配置。Chrome 的帐号应该不太能登陆吧。然后翻墙要配 VPN，其实不需要什么软件，系统自带的  PPTP 就可以了。当然先要自己买好 VPN，这里推荐一下GreenVPN，好像很容易找到冒充的，App Store 里面那个是真的。</p>
+<h1 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h1><p>apt-get 用着还是挺舒服的。dpkg 能装自己下载的包。然后新立德特别好用，很久以前是 Ubuntu 自带的，现在要自己装。</p>
+<h1 id="办公"><a href="#办公" class="headerlink" title="办公"></a>办公</h1><p>用 WPS Alpha 版就可以了。</p>
+<h1 id="图像编辑"><a href="#图像编辑" class="headerlink" title="图像编辑"></a>图像编辑</h1><p>GIMP 是首选。</p>
+<h1 id="保护视力"><a href="#保护视力" class="headerlink" title="保护视力"></a>保护视力</h1><p>redshift 基于地理位置而不是摄像头来调整屏幕，但是要自己加到启动项里面。</p>
+<h1 id="中文支持"><a href="#中文支持" class="headerlink" title="中文支持"></a>中文支持</h1><p>Fcitx 不错，记得改一下主题。然后中文字体的话可以选择文泉驿，把系统字体改成这个以后窗口标题好看多了。</p>
+<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><p>Wireshark 和 Ettercap 都要装的。</p>
+<h1 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h1><p>深度音乐播放器 + 网易云音乐插件。这个比较难装，需要自己去找一些包并解决依赖。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>Flash 是必须要的。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computers/" rel="tag">#Computers</a>
+          
+            <a href="/tags/Application-Software/" rel="tag">#Application Software</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/01/Suffix Tree/" rel="next" title="Suffix Tree">
+                <i class="fa fa-chevron-left"></i> Suffix Tree
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/13/处理器的分类/" rel="prev" title="处理器的分类">
+                处理器的分类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/06/Linux-下的常用软件/"
+           data-title="Linux 下的常用软件" data-url="http://mpaperboat.me/2016/05/06/Linux-下的常用软件/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Martin Paperboat" />
+          <p class="site-author-name" itemprop="name">Martin Paperboat</p>
+          <p class="site-description motion-element" itemprop="description">A Marble and a Sculptor</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-发行版和桌面环境"><span class="nav-number">2.</span> <span class="nav-text">Linux 发行版和桌面环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发环境"><span class="nav-number">3.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写博客"><span class="nav-number">4.</span> <span class="nav-text">写博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上网"><span class="nav-number">5.</span> <span class="nav-text">上网</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件包管理"><span class="nav-number">6.</span> <span class="nav-text">软件包管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#办公"><span class="nav-number">7.</span> <span class="nav-text">办公</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像编辑"><span class="nav-number">8.</span> <span class="nav-text">图像编辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#保护视力"><span class="nav-number">9.</span> <span class="nav-text">保护视力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中文支持"><span class="nav-number">10.</span> <span class="nav-text">中文支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全"><span class="nav-number">11.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#音乐"><span class="nav-number">12.</span> <span class="nav-text">音乐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">13.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Paperboat</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mpaperboat"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

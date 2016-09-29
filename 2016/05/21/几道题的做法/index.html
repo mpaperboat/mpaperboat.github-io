@@ -1,0 +1,694 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Algorithmics,Problem Solutions," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言我发现自己想得太少了。因为思考是很无聊，很累的事情。这似乎是我从学OI的一开始就一直存在并且最终击败了我的缺点。我愿意去写大代码的数据结构，愿意去学高级算法，愿意去整理出精致的模板库，就是不愿意思考。现在应该是改变的时候了。
+n个节点的AVL的个数12345a[n][h]=sigma a[k][h-1]*a[n-k-1][h-1]+2*a[k][h-2]*a[n-k-1][h-1]注意到h是其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="几道题的做法">
+<meta property="og:url" content="http://mpaperboat.me/2016/05/21/几道题的做法/index.html">
+<meta property="og:site_name" content="Paperboat">
+<meta property="og:description" content="前言我发现自己想得太少了。因为思考是很无聊，很累的事情。这似乎是我从学OI的一开始就一直存在并且最终击败了我的缺点。我愿意去写大代码的数据结构，愿意去学高级算法，愿意去整理出精致的模板库，就是不愿意思考。现在应该是改变的时候了。
+n个节点的AVL的个数12345a[n][h]=sigma a[k][h-1]*a[n-k-1][h-1]+2*a[k][h-2]*a[n-k-1][h-1]注意到h是其">
+<meta property="og:updated_time" content="2016-09-29T10:58:57.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="几道题的做法">
+<meta name="twitter:description" content="前言我发现自己想得太少了。因为思考是很无聊，很累的事情。这似乎是我从学OI的一开始就一直存在并且最终击败了我的缺点。我愿意去写大代码的数据结构，愿意去学高级算法，愿意去整理出精致的模板库，就是不愿意思考。现在应该是改变的时候了。
+n个节点的AVL的个数12345a[n][h]=sigma a[k][h-1]*a[n-k-1][h-1]+2*a[k][h-2]*a[n-k-1][h-1]注意到h是其">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 几道题的做法 | Paperboat </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Paperboat</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-websites">
+          <a href="/websites" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Websites
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'GhzLgxfy9dgx1J5usfEi','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                几道题的做法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-21T21:24:28+08:00" content="2016-05-21">
+              2016-05-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithmics-ProblemSolutions/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithmics.ProblemSolutions</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/21/几道题的做法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/21/几道题的做法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我发现自己想得太少了。因为思考是很无聊，很累的事情。这似乎是我从学OI的一开始就一直存在并且最终击败了我的缺点。我愿意去写大代码的数据结构，愿意去学高级算法，愿意去整理出精致的模板库，就是不愿意思考。现在应该是改变的时候了。</p>
+<h1 id="n个节点的AVL的个数"><a href="#n个节点的AVL的个数" class="headerlink" title="n个节点的AVL的个数"></a>n个节点的AVL的个数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a[n][h]=sigma a[k][h-1]*a[n-k-1][h-1]+2*a[k][h-2]*a[n-k-1][h-1]</div><div class="line"></div><div class="line">注意到h是其实logn级别的，这个dp是n^2lgn的。</div><div class="line"></div><div class="line">当然我们可以做得更好。a[h]=(a[h-1]^2+2a[h-1]a[h-2])*x是多项式乘法的形式。用fft可以做到nlg^2n。</div></pre></td></tr></table></figure>
+<h1 id="xxx…xxx-mod-k"><a href="#xxx…xxx-mod-k" class="headerlink" title="xxx…xxx mod k"></a>xxx…xxx mod k</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一共m个x，m在long long里面，k&lt;=1w。尝试等比数列求和去做，发现gcd(9,k)!=1的时候不好做。其实x*10^t mod k不是显然有周期的吗，这样就能做了。注意不一定是一个环，可能是一个rho。</div></pre></td></tr></table></figure>
+<h1 id="排列使得前缀最小值和最大"><a href="#排列使得前缀最小值和最大" class="headerlink" title="排列使得前缀最小值和最大"></a>排列使得前缀最小值和最大</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">把1到n排列，最大化每个元素包括自己的前面的最小值的和。有一个DAG顺序约束。直接贪心，每次取最大的放前面就好。正确性还是可以想象的，毕竟一个极小的值要留到后面。</div></pre></td></tr></table></figure>
+<h1 id="排列使得相邻乘积和最大"><a href="#排列使得相邻乘积和最大" class="headerlink" title="排列使得相邻乘积和最大"></a>排列使得相邻乘积和最大</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">n&lt;=16，显然是要dp。有位置约束，一些数字是固定的。我们注意到问题是关于序列的，很容易想到一个一个放，这样就有阶段性了。我一开始连这个都没想到。所以dp[i][m][j]表示处理到前i个，最后一个是j，前i个的集合是m的最大值。这样要跪，但是i是不需要的。注意写法，用子状态去更新会比较舒服。自然序就是拓扑序，不需要排序的。这里附上代码。</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> T;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> cnt[<span class="number">65536</span>];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">65536</span>;++i)</div><div class="line">        cnt[i]=cnt[i/<span class="number">2</span>]+i%<span class="number">2</span>;<span class="comment">//这个不预处理的话会增加复杂度</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> I=<span class="number">1</span>;I&lt;=T;++I)&#123;</div><div class="line">        <span class="keyword">int</span> a[<span class="number">20</span>],p[<span class="number">20</span>],n,fx[<span class="number">20</span>]=&#123;<span class="number">0</span>&#125;;</div><div class="line">        <span class="built_in">cin</span>&gt;&gt;n;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</div><div class="line">            <span class="built_in">cin</span>&gt;&gt;a[i]&gt;&gt;p[i],++p[i],fx[p[i]]=i;</div><div class="line">        <span class="keyword">static</span> <span class="keyword">int</span> dp[<span class="number">65536</span>][<span class="number">20</span>];<span class="comment">//dp[m][p]:用了m里面的元素，最后一个是p</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">0</span>;m&lt;(<span class="number">1</span>&lt;&lt;n);++m)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</div><div class="line">                dp[m][i]=~<span class="number">0u</span>&gt;&gt;<span class="number">1</span>;<span class="comment">//所有状态均为inf</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">1</span>;m&lt;(<span class="number">1</span>&lt;&lt;n);++m)&#123;<span class="comment">//按拓扑序枚举</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> p=<span class="number">1</span>;p&lt;=n;++p)&#123;</div><div class="line">                <span class="keyword">if</span>(m==(<span class="number">1</span>&lt;&lt;(p<span class="number">-1</span>)))<span class="comment">//单元素状态的初始条件</span></div><div class="line">                    <span class="keyword">if</span>(fx[<span class="number">1</span>]==<span class="number">0</span>||fx[<span class="number">1</span>]==p)</div><div class="line">                        dp[m][p]=<span class="number">0</span>;</div><div class="line">                <span class="keyword">if</span>(dp[m][p]!=~<span class="number">0u</span>&gt;&gt;<span class="number">1</span>&amp;&amp;m!=(<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>)&#123;<span class="comment">//要么是初始条件，要么是某个合法状态生成的合法状态</span></div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</div><div class="line">                        <span class="keyword">if</span>(((m&gt;&gt;i)&amp;<span class="number">1</span>)==<span class="number">0</span>&amp;&amp;(fx[cnt[m]+<span class="number">1</span>]==<span class="number">0</span>||fx[cnt[m]+<span class="number">1</span>]==i+<span class="number">1</span>))&#123;</div><div class="line">                            <span class="keyword">int</span> t=dp[m][p]+a[p]*a[i+<span class="number">1</span>];</div><div class="line">                            <span class="keyword">int</span>&amp;todo=dp[m+(<span class="number">1</span>&lt;&lt;i)][i+<span class="number">1</span>];</div><div class="line">                            <span class="keyword">if</span>(todo==~<span class="number">0u</span>&gt;&gt;<span class="number">1</span>)</div><div class="line">                                todo=t;</div><div class="line">                            <span class="keyword">else</span> <span class="keyword">if</span>(todo&lt;t)</div><div class="line">                                todo=t;</div><div class="line">                        &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithmics/" rel="tag">#Algorithmics</a>
+          
+            <a href="/tags/Problem-Solutions/" rel="tag">#Problem Solutions</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/20/Set/" rel="next" title="Set">
+                <i class="fa fa-chevron-left"></i> Set
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/21/几道题的做法/"
+           data-title="几道题的做法" data-url="http://mpaperboat.me/2016/05/21/几道题的做法/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Martin Paperboat" />
+          <p class="site-author-name" itemprop="name">Martin Paperboat</p>
+          <p class="site-description motion-element" itemprop="description">A Marble and a Sculptor</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#n个节点的AVL的个数"><span class="nav-number">2.</span> <span class="nav-text">n个节点的AVL的个数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xxx…xxx-mod-k"><span class="nav-number">3.</span> <span class="nav-text">xxx…xxx mod k</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排列使得前缀最小值和最大"><span class="nav-number">4.</span> <span class="nav-text">排列使得前缀最小值和最大</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排列使得相邻乘积和最大"><span class="nav-number">5.</span> <span class="nav-text">排列使得相邻乘积和最大</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Paperboat</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mpaperboat"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
